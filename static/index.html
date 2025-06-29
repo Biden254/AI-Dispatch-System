@@ -1,0 +1,55 @@
+<!-- static/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Emergency Dispatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Smart Emergency Dispatch</h1>
+
+  <section class="form-section">
+    <h2>Simulate New Event</h2>
+    <form id="eventForm">
+      <label>Type:
+        <select name="event_type">
+          <option value="fire">Fire</option>
+          <option value="medical">Medical</option>
+          <option value="police">Police</option>
+        </select>
+      </label>
+      <label>Location:
+        <input name="location" placeholder="e.g., Downtown" required>
+      </label>
+      <label>Time of Day:
+        <input type="number" name="time_of_day" min="0" max="23" required>
+      </label>
+      <label>Weather:
+        <select name="weather">
+          <option value="clear">Clear</option>
+          <option value="rain">Rain</option>
+          <option value="storm">Storm</option>
+        </select>
+      </label>
+      <label>Historical Urgency:
+        <input type="number" name="historical_urgency" min="1" max="10" required>
+      </label>
+      <button type="submit">Send Event</button>
+    </form>
+  </section>
+
+  <section class="logs-section">
+    <h2>Event Logs</h2>
+    <div id="logs"></div>
+    <!--<a href="/api/export" target="_blank" class="btn-download">Download CSV</a> -->
+  </section>
+
+  <section class="predictor-section">
+    <h2>Prediction</h2>
+    <div id="prediction">Waiting for data...</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
